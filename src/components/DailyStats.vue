@@ -9,6 +9,9 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { round } from '../utils/priceFormatter';
+
 export default {
   name: 'DailyStats',
   data() {
@@ -16,8 +19,33 @@ export default {
       open: 0,
       high: 0,
       low: 0,
-      volume: 0
+      volume: 0,
+      currencyType: 'eth-usd'
     };
+  },
+  methods: {
+    loadDailyStats() {
+      axios.get(`https://api.gdax.com/products/${this.currencyType}/stats`)
+        .then((res) => {
+          const data = res.data;
+          if (data) {
+            this.open = round(data.open);
+            this.high = round(data.high);
+            this.low = round(data.low);
+            this.volume = round(data.volume);
+          }
+        })
+        .catch((error) => {
+          this.price = error;
+        });
+    }
+  },
+  created() {
+    this.loadDailyStats();
+
+    setInterval(() => {
+      this.loadDailyStats();
+    }, 10000);
   }
 };
 </script>

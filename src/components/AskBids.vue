@@ -6,6 +6,9 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { round } from '../utils/priceFormatter';
+
 export default {
   name: 'AskBids',
   data() {
@@ -13,8 +16,33 @@ export default {
       asksPrice: 0,
       asksAmount: 0,
       bidsPrice: 0,
-      bidsAmount: 0
+      bidsAmount: 0,
+      currencyType: 'eth-usd'
     };
+  },
+  methods: {
+    loadAskBids() {
+      axios.get(`https://api.gdax.com/products/${this.currencyType}/book`)
+        .then((res) => {
+          const data = res.data;
+          if (data) {
+            this.asksPrice = round(data.asks[0][0]);
+            this.asksAmount = round(data.asks[0][1]);
+            this.bidsPrice = round(data.bids[0][0]);
+            this.bidsAmount = round(data.bids[0][1]);
+          }
+        })
+        .catch((error) => {
+          this.price = error;
+        });
+    }
+  },
+  created() {
+    this.loadAskBids();
+
+    setInterval(() => {
+      this.loadAskBids();
+    }, 10000);
   }
 };
 </script>

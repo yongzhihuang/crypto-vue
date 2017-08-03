@@ -29,16 +29,25 @@ export default {
       currencyType: 'ETH-USD',
     };
   },
+  methods: {
+    loadPrice() {
+      axios.get(`https://api.gdax.com/products/${this.currencyType}/ticker`)
+        .then((res) => {
+          if (res.data.price) {
+            this.price = round(res.data.price);
+          }
+        })
+        .catch((error) => {
+          this.price = error;
+        });
+    }
+  },
   created() {
-    axios.get(`https://api.gdax.com/products/${this.currencyType}/ticker`)
-      .then((res) => {
-        if (res.data.price) {
-          this.price = round(res.data.price);
-        }
-      })
-      .catch((error) => {
-        this.price = error;
-      });
+    this.loadPrice();
+
+    setInterval(() => {
+      this.loadPrice();
+    }, 10000);
   }
 };
 </script>
