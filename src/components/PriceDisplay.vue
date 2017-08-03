@@ -11,24 +11,46 @@
       <option value="ltc-eur">ltc-eur</option>
     </select>
 
-    <div class="currency-type"></div>
-    <div class="price">{{price}}</div>
+    <div class="currency-type">{{currencyType}}</div>
+    <div class="price" v-if="price">{{price}}</div>
+
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import { round } from '../utils/priceFormatter';
+
 export default {
   name: 'PriceDisplay',
   data() {
     return {
-      price: 0
+      price: 0,
+      currencyType: 'ETH-USD',
     };
+  },
+  created() {
+    axios.get(`https://api.gdax.com/products/${this.currencyType}/ticker`)
+      .then((res) => {
+        if (res.data.price) {
+          this.price = round(res.data.price);
+        }
+      })
+      .catch((error) => {
+        this.price = error;
+      });
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .currency-type {
+    font-size: 50px;
+    margin-top: 100px;
+    color: white;
+  }
+
   .price-display {
     display: flex;           /* establish flex container */
     flex-direction: column;  /* make main axis vertical */
