@@ -1,13 +1,21 @@
 <template>
   <div class="askbids">
-    <div class="asks"></div>
-    <div class="bids"></div>
+    <div class="asks">Sells: {{asksPrice}} / {{asksAmount}} Orders</div>
+    <div class="bids">Buys: {{bidsPrice}} / {{bidsAmount}} Orders</div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'AskBids',
+  data() {
+    return {
+      asksPrice: 0,
+      asksAmount: 0,
+      bidsPrice: 0,
+      bidsAmount: 0
+    };
+  }
 };
 </script>
 
@@ -16,6 +24,7 @@ export default {
   .askbids {
     background: white;
     padding: 5px;
+    margin: 5px;
     font-weight: bold;
     border-radius: 5px;
   }

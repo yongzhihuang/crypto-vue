@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'PriceTarget',
+  name: 'PriceTarget'
 };
 </script>
 

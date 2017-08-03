@@ -12,13 +12,18 @@
     </select>
 
     <div class="currency-type"></div>
-    <div class="price"></div>
+    <div class="price">{{price}}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'PriceDisplay',
+  data() {
+    return {
+      price: 0
+    };
+  }
 };
 </script>
 
