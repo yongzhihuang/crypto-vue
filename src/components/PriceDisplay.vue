@@ -85,4 +85,23 @@ export default {
     text-transform: uppercase;
     font-weight: bold;
   }
+
+  @media only screen and (max-width: 600px) {
+    .currency-type {
+      font-size: 20px;
+    }
+
+    .set-target {
+      width: 50%;
+    }
+
+    .price {
+      color: white;
+      font-size: 75px;
+      font-weight: bold;
+      width: 100%;
+      margin: 0px;
+      text-align: center;     /* will center text in <p>, which is not a flex item */
+    }
+  }
 </style>
