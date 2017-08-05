@@ -17,8 +17,7 @@ export default {
   .contact {
     color: white;
     font-size: 15px;
-    position: absolute;
-    bottom: 0;
-    left: 5px;
+    position: relative;
+    text-algn: center;
   }
 </style>

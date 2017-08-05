@@ -56,7 +56,7 @@ export default {
 <style scoped>
   .currency-type {
     font-size: 50px;
-    margin-top: 100px;
+    margin-top: 45px;
     color: white;
   }
 
@@ -72,7 +72,6 @@ export default {
     color: white;
     font-size: 200px;
     width: 100%;
-    margin: 5px;
     text-align: center;     /* will center text in <p>, which is not a flex item */
   }
 
@@ -97,7 +96,7 @@ export default {
 
     .price {
       color: white;
-      font-size: 75px;
+      font-size: 95px;
       font-weight: bold;
       width: 100%;
       margin: 0px;

@@ -6,4 +6,8 @@ export function round(value) {
   return 0;
 }
 
+export function numberWithCommas(price) {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 export default round;

@@ -1,16 +1,23 @@
 <template>
   <div id="app">
     <PriceWidget></PriceWidget>
+    <Top></Top>
+    <Contact></Contact>
   </div>
 </template>
 
 <script>
 import PriceWidget from './Pages/PriceWidget';
+import Top from './Pages/Top';
+import Contact from './components/Contact';
+
 
 export default {
   name: 'app',
   components: {
-    PriceWidget
+    PriceWidget,
+    Top,
+    Contact
   }
 };
 </script>
@@ -30,6 +37,6 @@ export default {
   }
 
   p {
-    line-height: 5px;
+    line-height: 10px;
   }
 </style>

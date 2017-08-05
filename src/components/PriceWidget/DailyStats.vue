@@ -53,7 +53,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .daily-stats {
-    margin: 3px;
+    margin: 5px;
     font-family: arial;
     color: white;
     font-size: 14px;

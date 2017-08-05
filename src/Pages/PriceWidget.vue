@@ -13,7 +13,6 @@ import PriceDisplay from '../components/PriceWidget/PriceDisplay';
 import AskBids from '../components/PriceWidget/AskBids';
 import DailyStats from '../components/PriceWidget/DailyStats';
 import PriceTarget from '../components/PriceWidget/PriceTarget';
-import Contact from '../components/PriceWidget/Contact';
 
 
 export default {
@@ -22,8 +21,7 @@ export default {
     PriceDisplay,
     AskBids,
     DailyStats,
-    PriceTarget,
-    Contact
+    PriceTarget
   },
 };
 </script>

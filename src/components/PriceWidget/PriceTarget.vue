@@ -15,7 +15,7 @@ export default {
 <style scoped>
   .price-target-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   .set-target {
