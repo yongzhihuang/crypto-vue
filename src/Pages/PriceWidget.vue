@@ -1,5 +1,5 @@
 <template>
-  <div class="core">
+  <div class="price-widget">
       <PriceDisplay></PriceDisplay>
       <AskBids></AskBids>
       <DailyStats></DailyStats>
@@ -9,15 +9,15 @@
 </template>
 
 <script>
-import PriceDisplay from './PriceWidget/PriceDisplay';
-import AskBids from './PriceWidget/AskBids';
-import DailyStats from './PriceWidget/DailyStats';
-import PriceTarget from './PriceWidget/PriceTarget';
-import Contact from './PriceWidget/Contact';
+import PriceDisplay from '../components/PriceWidget/PriceDisplay';
+import AskBids from '../components/PriceWidget/AskBids';
+import DailyStats from '../components/PriceWidget/DailyStats';
+import PriceTarget from '../components/PriceWidget/PriceTarget';
+import Contact from '../components/PriceWidget/Contact';
 
 
 export default {
-  name: 'Core',
+  name: 'PriceWidget',
   components: {
     PriceDisplay,
     AskBids,
@@ -48,7 +48,7 @@ export default {
     color: #42b983;
   }
 
-  .core {
+  .price-widget {
     display: flex;           /* establish flex container */
     flex-direction: column;  /* make main axis vertical */
     justify-content: center; /* center items vertically, in this case */

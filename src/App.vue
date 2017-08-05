@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <Core></Core>
+    <PriceWidget></PriceWidget>
   </div>
 </template>
 
 <script>
-import Core from './components/Core';
+import PriceWidget from './Pages/PriceWidget';
 
 export default {
   name: 'app',
   components: {
-    Core,
-  },
+    PriceWidget
+  }
 };
 </script>
 
