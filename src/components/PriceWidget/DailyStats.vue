@@ -10,7 +10,7 @@
 
 <script>
 import axios from 'axios';
-import { round } from '../utils/priceFormatter';
+import { round } from '../../utils/priceFormatter';
 
 export default {
   name: 'DailyStats',

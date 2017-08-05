@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import PriceDisplay from './PriceDisplay';
-import AskBids from './AskBids';
-import DailyStats from './DailyStats';
-import PriceTarget from './PriceTarget';
-import Contact from './Contact';
+import PriceDisplay from './PriceWidget/PriceDisplay';
+import AskBids from './PriceWidget/AskBids';
+import DailyStats from './PriceWidget/DailyStats';
+import PriceTarget from './PriceWidget/PriceTarget';
+import Contact from './PriceWidget/Contact';
 
 
 export default {
