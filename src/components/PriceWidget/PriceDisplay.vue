@@ -35,6 +35,7 @@ export default {
         .then((res) => {
           if (res.data.price) {
             this.price = round(res.data.price);
+            document.title = `$${this.price}`;
           }
         })
         .catch((error) => {
